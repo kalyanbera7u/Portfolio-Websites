@@ -1,0 +1,984 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Goldman', sans-serif;
+  color: crimson;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.divider_div {
+  width: 100px;
+  height: 4px;
+  background-color: crimson;
+  margin-top: 5px;
+}
+
+.gobal_header_htwo {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+
+/* --------- Header Section CSS -------- */
+
+/* ---- Scroll Effect CSS ---- */
+.main_header_div {
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  padding: 15px 0;
+  transition: background-color 0.4s ease;
+}
+
+.main_header_div.scrolled {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* --------------------------- */
+
+.header_nav_menu {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.mobile_nav_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  display: none;
+}
+
+.responsive_line {
+  width: 24px;
+  background-color: #FFFFFF;
+  height: 2px;
+}
+
+.logo img {
+  width: 200px;
+  object-fit: contain;
+  height: 80px;
+}
+
+.menu_div {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu_div ul {
+  display: flex;
+  gap: 50px;
+}
+
+.menu_div ul li {
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu_div ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: -100%;
+  background-color: crimson;
+  transition: left 0.3s ease-in-out;
+}
+
+.menu_div ul li a:hover::after {
+  left: 0;
+}
+
+.menu_div ul li a:hover {
+  color: crimson;
+}
+
+.menu_div ul li a {
+  font-family: 'Goldman', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: crimson;
+
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.menu_div ul li a.active::after {
+  left: 0;
+}
+
+.menu_div ul li a.active {
+  color: crimson;
+}
+
+/* All Button CSS */
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+
+.punch_effect_content,
+.punch_effect_icon {
+  position: relative;
+  text-decoration: none;
+}
+
+.cta-button {
+  color: #fff;
+  background-color: crimson;
+  font-size: 18px;
+  padding: 12px 35px;
+  font-family: 'Goldman', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.cta-circle {
+  background-color: crimson;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.punch_effect_content::after,
+.punch_effect_icon::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  background-color: crimson;
+  border-radius: 50px;
+  transition: all 0.6s ease-in-out;
+  z-index: -1;
+  top: 51%;
+  transform: translateY(-50%);
+}
+
+.punch_effect_content::after {
+  right: 0;
+}
+
+.punch_effect_icon::after {
+  left: 0;
+}
+
+.cta-container:hover .punch_effect_content::after {
+  right: -10px;
+}
+
+.cta-container:hover .punch_effect_icon::after {
+  left: -10px;
+}
+
+/* -------------- */
+/* ------------------ */
+
+/* Hero */
+
+.hero {
+  background-image: url("/assets/images/Banner\ Image.png");
+  /* background: linear-gradient(to right, #0f0f1a, #181842, #1e1f56); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 400px 20px 100px 20px;
+  text-align: left;
+  background-color: #000000ce;
+  background-blend-mode: overlay;
+}
+
+.hero-line {
+  font-size: 32px;
+  font-family: 'Goldman', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.hero_para_txt {
+  width: 80%;
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.highlight {
+  color: #FFFFFF;
+}
+
+.animated-text {
+  display: none;
+  /* Initially hide all */
+  white-space: nowrap;
+}
+
+
+.animated-text {
+  color: #a5c410;
+  font-family: 'Goldman', sans-serif;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Optional smooth fade effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------- */
+
+
+
+
+/* ----- About Us CSS Implemented ---- */
+
+.about_us_div {
+  padding: 100px 0;
+  display: flex;
+  gap: 60px;
+}
+
+.abt_image_div img {
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.abt_header {
+  color: #000;
+}
+
+.aboutus_child {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.abt_para_txt {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.abt_btn_div {
+  align-self: flex-start;
+}
+
+/* ------------------------------- */
+
+
+
+/* ----- Footer CSS Implemented ---- */
+footer {
+  background: black;
+  color: white;
+  padding: 60px 20px 30px 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.footer_main_div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.foot_logo {
+  width: 38%;
+}
+
+.foot_menu {
+  width: 15%;
+}
+
+.foot_form {
+  width: 30%;
+}
+
+.foot_lgo_text {
+  margin-top: 20px;
+}
+
+.foot_header_txt_col {
+  font-size: 24px;
+}
+
+.footer_menuus_items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer_menuus_items li {
+  list-style: none;
+}
+
+.foot_form_texts {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.footer_menuus_items li a {
+  font-family: 'Goldman', sans-serif;
+  text-transform: capitalize;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: crimson;
+  }
+}
+
+.subscribe-container {
+  margin-top: 20px;
+}
+
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+}
+
+.subscribe-form input[type="email"] {
+  width: 100%;
+  min-height: 45px;
+  border: 1px solid crimson;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 16px;
+  border-radius: 50px;
+  padding: 10px;
+  padding-left: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  text-transform: lowercase;
+
+  &:focus {
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.subscribe-form input::placeholder {
+  color: #FFFFFF;
+  opacity: 1;
+  text-transform: capitalize;
+  font-weight: 200;
+}
+
+.subscribe-form button {
+  padding: 15px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid crimson;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Goldman', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.footer_btttn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+
+.foot_copywrite_div {
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #dc143c94;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.foot_copywrite_div a {
+  font-weight: 700;
+
+  &:hover {
+    color: crimson;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* ------------------------------------ */
+
+
+/* ---- Responsive CSS Implemented ---- */
+
+@media(max-width:1366px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+
+  /* ---- Header Responsive ----- */
+  .menu_div ul {
+    gap: 35px;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+  }
+
+  .menu_div ul li a {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .logo img {
+    width: 150px;
+    height: 60px;
+  }
+
+  /* ---------------------------- */
+
+
+
+
+
+  /* Footer Section CSS ----- */
+  .footer_main_div {
+    padding: 0;
+  }
+
+  /* ---------------------------- */
+
+
+
+
+
+  /* Hero Section CSS ----- */
+  .hero {
+    padding: 300px 20px 100px 20px;
+  }
+
+  /* ---------------------------- */
+
+  /* About Us Section CSS ------- */
+  .about_us_div {
+    padding: 80px 0;
+    gap: 40px;
+  }
+
+  .gobal_header_htwo {
+    font-size: 30px;
+  }
+
+  .abt_para_txt {
+    margin-top: 30px;
+  }
+
+  .abt_image_div img {
+    height: 375px;
+  }
+
+  /* ---------------------------- */
+}
+
+/* ------------------------------------ */
+
+
+/* ------------------------------------ */
+@media(max-width:1200px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* ---- Header CSS Implemented ---- */
+  .menu_div ul {
+    gap: 28px;
+  }
+
+  .menu_div ul li a {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .menu_div {
+    gap: 30px;
+  }
+
+  .cta-button {
+    padding: 8px 18px;
+  }
+
+  .cta-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .punch_effect_content::after,
+  .punch_effect_icon::after {
+    width: 10px;
+    height: 10px;
+  }
+
+  .logo img {
+    width: 130px;
+    height: 50px;
+  }
+
+  /* ---------------------------- */
+
+
+  /* Footer Section CSS ----- */
+
+  .footer_foot {
+    gap: 60px;
+    padding: 50px 20px 20px 20px;
+  }
+
+  .foot_copywrite_div {
+    padding: 20px 0 0 0;
+  }
+
+  .foot_header_txt_col {
+    font-size: 22px;
+  }
+
+  .foot_copywrite_div {
+    font-size: 16px;
+  }
+
+  .foot_lgo_text {
+    font-size: 15px;
+  }
+
+  .foot_form_texts {
+    font-size: 15px;
+  }
+
+  .footer_menuus_items {
+    gap: 10px;
+  }
+
+  .footer_menuus_items li a {
+    font-size: 16px;
+  }
+
+  /* ---------------------------- */
+
+
+
+
+
+  /* About Us Section CSS ------- */
+  .about_us_div {
+    padding: 60px 0;
+    gap: 25px;
+  }
+
+  .gobal_header_htwo {
+    font-size: 25px;
+  }
+
+  .abt_para_txt {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .abt_image_div img {
+    height: 375px;
+  }
+
+  /* ---------------------------- */
+
+
+}
+
+/* ------------------------------------ */
+
+
+/* ------------------------------------ */
+@media(max-width:1024px) {
+
+  /* ---- Header CSS Implemented ---- */
+
+  .menu_div {
+    gap: 20px;
+  }
+
+  .mobile_nav_menu {
+    display: flex;
+    background-color: crimson;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    cursor: pointer;
+
+    &:hover {
+      transition: all 0.5s ease;
+      background-color: #FFFFFF;
+    }
+  }
+
+  .mobile_nav_menu:hover .responsive_line {
+    background-color: crimson;
+    transition: all 0.5s ease;
+  }
+
+  /* ------------ */
+  .mobile_nav_ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 30px;
+    transition: right 0.4s ease-in-out;
+    z-index: 9;
+    padding-top: 15%;
+  }
+
+  .mobile_nav_ul li {
+    list-style: none;
+  }
+
+  .mobile_nav_ul li a {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Goldman', sans-serif;
+    letter-spacing: 1.5px;
+    transition: color 0.3s;
+  }
+
+  .mobile_nav_ul li a:hover {
+    color: crimson;
+  }
+
+  .mobile_nav_ul.active {
+    right: 0;
+  }
+
+
+  /* Animate hamburger to cross */
+  /* Hamburger -> Cross animation */
+  .mobile_nav_menu.cross .responsive_line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .mobile_nav_menu.cross .responsive_line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile_nav_menu.cross .responsive_line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .responsive_line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* ------------ */
+  /* ---------------------------- */
+
+
+  /* ------ Hero Section CSS Implemented ----- */
+  .hero-line {
+    font-size: 25px;
+  }
+
+  .hero_para_txt {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .hero-line {
+    font-size: 20px;
+  }
+
+  /* ---------------------------- */
+
+
+  /* About Us Section CSS ------- */
+  .about_us_div {
+    padding: 45px 0;
+    gap: 25px;
+  }
+
+  .gobal_header_htwo {
+    font-size: 25px;
+  }
+
+  .abt_para_txt {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .abt_image_div img {
+    height: 375px;
+  }
+
+  /* ---------------------------- */
+
+
+  /* Footer Section CSS ----- */
+  .foot_header_txt_col {
+    font-size: 18px;
+  }
+
+  .foot_form_texts {
+    font-size: 14px;
+  }
+
+  .foot_lgo_text {
+    font-size: 14px;
+  }
+
+  /* ---------------------------- */
+
+
+
+}
+
+
+@media(max-width:880px) {
+  .hero-line {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* About Us Section CSS ------- */
+  .about_us_div {
+    padding: 45px 0;
+    gap: 22px;
+  }
+
+  .gobal_header_htwo {
+    font-size: 22px;
+  }
+
+  .abt_para_txt {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .abt_image_div img {
+    height: 400px;
+  }
+
+  /* ---------------------------- */
+}
+
+
+/* ---------------------------- */
+@media(max-width:767px) {
+  .logo img {
+    width: 80px;
+    height: 40px;
+  }
+
+  .menu_div {
+    gap: 10px;
+  }
+
+  .mobile_nav_menu {
+    width: 35px;
+    height: 35px;
+  }
+
+  .responsive_line {
+    width: 20px;
+  }
+
+  .cta-button {
+    font-size: 15px;
+  }
+
+  .cta-button {
+    padding: 6px 15px;
+    letter-spacing: 1px;
+  }
+
+  .cta-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .mobile_nav_ul {
+    padding-top: 20%;
+  }
+
+  .hero {
+    padding: 200px 20px 100px 20px;
+  }
+
+  /* About Us Section CSS ------- */
+  .about_us_div {
+    padding: 45px 0;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .aboutus_child {
+    width: 100%;
+  }
+
+  .gobal_header_htwo {
+    font-size: 22px;
+  }
+
+  .abt_para_txt {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .abt_image_div img {
+    height: 350px;
+  }
+
+  /* ---------------------------- */
+
+  /* Footer Section CSS ----- */
+  .footer_main_div {
+    flex-direction: column;
+    gap: 35px;
+
+  }
+
+  .footer_main_div div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .foot_lgo_text {
+    margin-top: 16px;
+  }
+
+  .footer_menuus_items {
+    margin-top: 16px;
+  }
+
+  .foot_form_texts {
+    margin-top: 16px;
+  }
+
+  .subscribe-container {
+    margin: 25px 0 0 0;
+  }
+
+  .footer_foot {
+    gap: 40px;
+    padding: 60px 20px 20px 20px;
+  }
+
+  /* ---------------------------- */
+
+
+}
+
+/* ---------------------------- */
+/* ------------------------------------ */
